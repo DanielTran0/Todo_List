@@ -9,119 +9,124 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container-fluid mainHeader">
-        <div class="logo">
-            <img src="./images/paper.png" alt="paper">
+        <div class="container-fluid mainHeader">
+            <div class="logo">
+                <img src="./images/paper.png" alt="paper">
+            </div>
+            <h1 class="mainTitle">Todo List</h1>
+            <div class="menuButton">
+                <div class="mobileMenu"></div>
+                <div class="mobileMenu"></div>
+                <div class="mobileMenu"></div>
+            </div>
         </div>
-        <h1 class="mainTitle">Todo List</h1>
-    </div>
-
-    <div class="container-fluid mainBody">
-        <div class="row">
-            <div class="col-2 sideBar text-center">
-                <div class="overview">
-                    <a href="#" class='listGroup' id="overviewTab">Overview</a>
-                    <a href="#" class='listGroup' id="instructions">Instructions</a>
-                    <a href="#" class='listGroup' id="general">General</a>
-                    <a href="#" class='listGroup' id="today">Today</a>
-                    <a href="#" class='listGroup' id="week">Week</a>
-                    <a href="#" class='listGroup' id="all">All</a>
+    
+      <div id="content">
+        <div class="mainBody">
+                <div class="sideBar text-center">
+                    <div class="overview">
+                        <a href="#" class='listGroup' id="overviewTab">Overview</a>
+                        <a href="#" class='listGroup' id="instructions">Instructions</a>
+                        <a href="#" class='listGroup' id="general">General</a>
+                        <a href="#" class='listGroup' id="today">Today</a>
+                        <a href="#" class='listGroup' id="week">Week</a>
+                        <a href="#" class='listGroup' id="all">All</a>
+                    </div>
+                    <div class="projects">
+                        <div class="projectHeading">
+                            Projects
+                            <button class="addProject" type="button">+</button>
+                        </div>
+                        <div class="allProjects"></div>
+                    </div>
                 </div>
-                <div class="projects">
-                    <div class="projectHeading">
-                        Projects
-                        <button class="addProject" type="button">+</button>
+                <div class="mainBar">
+                    <div class="container-fluid mainBarHeader">
+                        <h2 class="mainBarHeaderContent text-center"></h2>
                     </div>
-                    <div class="allProjects"></div>
+                    <div class="container mainBarContent">
+                    </div>
+                    <div class="buttonDiv"> 
+                        <button class="addList" type="button" data-bs-toggle="modal" data-bs-target="#modalForm"><span>+</span></button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-10 mainBar">
-                <div class="container-fluid mainBarHeader">
-                    <h2 class="mainBarHeaderContent"></h2>
-                </div>
-                <div class="container mainBarContent">
-                </div>
-                <div class="buttonDiv"> 
-                    <button class="addList" type="button" data-bs-toggle="modal" data-bs-target="#modalForm"><span>+</span></button>
-                </div>
-            </div>
-        </div> 
-    </div>
-
-    <div class="modal" id='modalForm' tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title formHeader">New Task</h5>
-              <p class="modal-title">(Only Title Required)</p>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="taskForm">
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Title</label>
-                        <input type="text" class="form-control" id="title" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="description" class="form-label">Description</label>
-                        <textarea class="form-control" id="description" rows="3"></textarea>
-                    </div>
-                    <div class="dueDate">
-                        <label for="dueDate" class="form-label">Due Date</label>
-                        <input type="date" id="dueDate">
-                    </div>
-                    <div class="priorityDiv">
-                        <label for="priority select" class="form-label">Priority Level</label>
-                        <select class="form-select prioritySelect" aria-label="priority select">
-                            <option selected value="" id='none'>None</option>
-                            <option value="low">Low</option>
-                            <option value="medium">Medium</option>
-                            <option value="high">High</option>
-                        </select>
-                    </div>
-                    <div class="projectDiv">
-                        <label for="project select" class="form-label">Project Grouping</label>
-                        <select class="form-select projectSelect" aria-label="project select">
-                        </select>  
-                    </div>
-                </form>            
-            </div>
-            <div class="modal-footer addListForm">
-                <button class="btn btn-primary formButton" form="taskForm">r</button>
-            </div>
-          </div>
         </div>
       </div>
-
-
-      <div class="modal" id='fullList' tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title listTitle"></h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    
+        <div class="modal" id='modalForm' tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title formHeader">New Task</h5>
+                  <p class="modal-title">(Only Title Required)</p>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="taskForm">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" rows="3"></textarea>
+                        </div>
+                        <div class="dueDate">
+                            <label for="dueDate" class="form-label">Due Date</label>
+                            <input type="date" id="dueDate">
+                        </div>
+                        <div class="priorityDiv">
+                            <label for="priority select" class="form-label">Priority Level</label>
+                            <select class="form-select prioritySelect" aria-label="priority select">
+                                <option selected value="" id='none'>None</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        <div class="projectDiv">
+                            <label for="project select" class="form-label">Project Grouping</label>
+                            <select class="form-select projectSelect" aria-label="project select">
+                            </select>  
+                        </div>
+                    </form>            
+                </div>
+                <div class="modal-footer addListForm">
+                    <button class="btn btn-primary formButton" form="taskForm">r</button>
+                </div>
+              </div>
             </div>
-            <div class="modal-body">
-                <div class="listTop">
+          </div>
+    
+    
+          <div class="modal" id='fullList' tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title listTitle"></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="listTop">
+                        <div>
+                            <b>Project:</b> <span class="listProject"></span>
+                        </div>
+                        <div class="listTopRight">
+                            <b>Due Date:</b> <span class="listDueDate"></span>
+                        </div>
+                    </div>
                     <div>
-                        <b>Project:</b> <span class="listProject"></span>
-                    </div>
-                    <div class="listTopRight">
-                        <b>Due Date:</b> <span class="listDueDate"></span>
+                        <b>Description:</b> <span class="listDescription"></span>
                     </div>
                 </div>
-                <div>
-                    <b>Description:</b> <span class="listDescription"></span>
+                <div class="modal-footer showList">
+                    <b>Priority:</b><span class="listPriority">Low</span>
+                    <button type="button" class="btn btn-secondary editList" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalForm">Edit</button>
+                    <button type="button" class="btn btn-danger deleteList" data-bs-dismiss="modal">Delete</button>
                 </div>
-            </div>
-            <div class="modal-footer showList">
-                <b>Priority:</b><span class="listPriority">Low</span>
-                <button type="button" class="btn btn-secondary editList" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalForm">Edit</button>
-                <button type="button" class="btn btn-danger deleteList" data-bs-dismiss="modal">Delete</button>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>

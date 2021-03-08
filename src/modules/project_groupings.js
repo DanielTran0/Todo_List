@@ -8,6 +8,8 @@ const projectGroupings = (() => {
     const _addListButton = document.querySelector('.addList');
     const _allProjectsDiv = document.querySelector('.allProjects');
     const _mainBarHeaderDiv = document.querySelector('.mainBarHeader');
+    const _sideBar = document.querySelector('.sideBar');
+    const _mobileButton = document.querySelector('.menuButton');
 
     const showProjectHeadings = () => {
         projectHeadingsArray.forEach(heading => {
@@ -326,6 +328,14 @@ const projectGroupings = (() => {
         mainPage.saveLocalStorage();
     }
 
+    const toggleMenuButton = () => {
+        _mobileButton.addEventListener('click', () => {
+            if (_sideBar.style.display === 'none') {
+                _sideBar.style.display = 'inline-block'
+            } else _sideBar.style.display = 'none'
+        })
+    }
+
     return {
         showProjectHeadings,
         showProjectList,
@@ -336,6 +346,7 @@ const projectGroupings = (() => {
         showAllLists,
         createProjectListInput,
         changeProjectHeading,
+        toggleMenuButton,
     }
 })();
 

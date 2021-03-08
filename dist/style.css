@@ -24,6 +24,10 @@ a {
     margin-bottom: 1em;
 }
 
+.mainBody {
+    display: flex;
+}
+
 /*  ========== 
     top header
     ========== */
@@ -36,6 +40,7 @@ a {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     align-items: center;
+    height: 60px;
 }
 
 .logo {
@@ -49,6 +54,7 @@ a {
 
 .mainTitle {
     margin-left: 0.3em;
+    font-size: 44px;
 }
 
 /* ========
@@ -56,9 +62,14 @@ a {
    ========  */ 
 
 .sideBar {
+    display: inline-block;
+    position: absolute;
     background-color: rgb(53, 55, 68);
     color: white;
-    height: 100vh;
+    width: 300px;
+    height: calc(100% - 60px);    
+    overflow-y: auto;
+
 }
 
 .overview {
@@ -93,13 +104,19 @@ a {
     color: #0a58ca;
 }
 
+.addProjectHeading > .btn-group {
+    margin: 10px 0;
+}
+
 .allProjects {
     display: flex;
     flex-direction: column;
     margin-top: 1.5em;
+    word-wrap: break-word;
 }
 
 #newProjectInput {
+    margin-top: 10px;
     margin-right: 0.8em;
     padding-top: auto;
 }
@@ -108,13 +125,18 @@ a {
    main bar
    ======== */
 
+.mainBar {
+    position: absolute;
+    width: calc(100% - 300px);
+    right: 0;
+}
+
 .mainBarHeaderContent{
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+
     margin-top: 0.5em;
     font-size: 2.5em;
     cursor: pointer;
+    word-wrap: break-word;
 }
 
 .mainBarHeaderContent:hover {
@@ -179,6 +201,11 @@ a {
 .listItem {
     margin-right: 0.5em;
     align-self: center;
+}
+
+.listItem title{
+    word-wrap: break-word;
+
 }
 
 .title {
@@ -257,5 +284,55 @@ a {
 
 .priorityDiv {
     margin-bottom: 1em;
+}
+
+@media (max-width: 1000px) {
+    .mainBody{
+        flex-direction: column;
+    }
+
+    .sideBar {
+        position: static;
+        height: auto;
+        width: auto;
+    }
+
+    .addProjectHeading{
+        margin-bottom: 15px;
+    }
+
+    .addProjectHeading > .btn-group {
+        margin-top: 0px;
+    }
+
+    .mainBar {
+        position: static;
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    .changeProjectHeading .btn-group {
+        margin-top: 10px;
+    }
+
+    .menuButton {
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    .mobileMenu {
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px 0;
+    }
+    
+}
+
+
+@media (max-width: 650px) {
+    .mainBar {
+        width: 300px;
+    }
 }
 

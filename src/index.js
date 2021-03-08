@@ -90,6 +90,7 @@ mainPage.getLocalStorage();
 mainPage.addNewList();
 mainPage.displayDefaultListsAndButton();
 projectGroupings.showProjectHeadings();
+projectGroupings.toggleMenuButton();
 
 export {
     projectHeadingsArray,
